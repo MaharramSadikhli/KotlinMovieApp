@@ -2,4 +2,12 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
+    alias(libs.plugins.com.google.dagger.hilt.android) apply false
+    alias(libs.plugins.google.devtools.ksp)
+}
+
+buildscript {
+    dependencies {
+        classpath(libs.hilt.android.gradle.plugin)
+    }
 }
