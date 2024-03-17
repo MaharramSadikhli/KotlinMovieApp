@@ -1,9 +1,9 @@
-package com.imsosoft.kotlinmovieapp.presentation.movies.states
+package com.imsosoft.kotlinmovieapp.presentation.states
 
 import com.imsosoft.kotlinmovieapp.domain.model.Movie
 
 
-data class MovieState(
+data class MovieStates(
     val isLoading: Boolean = false,
     val movies: List<Movie> = emptyList(),
     val error: String = "",
