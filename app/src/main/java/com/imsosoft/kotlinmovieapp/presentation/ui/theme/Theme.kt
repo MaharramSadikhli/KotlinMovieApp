@@ -1,4 +1,4 @@
-package com.imsosoft.kotlinmovieapp.ui.theme
+package com.imsosoft.kotlinmovieapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

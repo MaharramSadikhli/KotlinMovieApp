@@ -1,4 +1,4 @@
-package com.imsosoft.kotlinmovieapp
+package com.imsosoft.kotlinmovieapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.imsosoft.kotlinmovieapp.ui.theme.KotlinMovieAppTheme
+import com.imsosoft.kotlinmovieapp.presentation.ui.theme.KotlinMovieAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
