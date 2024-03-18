@@ -45,8 +45,23 @@ fun TitleText(text: String) {
         text = text,
         fontFamily = FontFamily.Cursive,
         fontWeight = FontWeight.Bold,
-        fontSize = 36.sp,
+        fontSize = 40.sp,
+        letterSpacing = 0.7.sp,
         lineHeight = 44.sp,
+        textAlign = TextAlign.Center,
+        color = Color.White,
+        overflow = TextOverflow.Ellipsis,
+    )
+}
+
+@Composable
+fun YearText(text: String) {
+    Text(
+        text = text,
+        fontFamily = FontFamily.Monospace,
+        fontWeight = FontWeight.Bold,
+        fontSize = 30.sp,
+        lineHeight = 38.sp,
         textAlign = TextAlign.Center,
         color = Color.White,
         overflow = TextOverflow.Ellipsis,
