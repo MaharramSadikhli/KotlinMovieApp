@@ -4,14 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.imsosoft.kotlinmovieapp.presentation.ui.theme.KotlinMovieAppTheme
+import com.imsosoft.kotlinmovieapp.presentation.views.screens.MovieDetailScreen
+import com.imsosoft.kotlinmovieapp.presentation.views.screens.MovieScreen
+import com.imsosoft.kotlinmovieapp.util.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,29 +22,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             KotlinMovieAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface(color = MaterialTheme.colorScheme.background) {
+
+                    val navController = rememberNavController()
+
+                    NavHost(navController = navController, startDestination = Screen.MovieScreen.route ) {
+
+                        composable(route = Screen.MovieScreen.route) {
+                            MovieScreen(navController = navController)
+                        }
+                        composable(route = Screen.MovieDetailScreen.route+"/{${Constants.IMDB_ID}}") {
+                            MovieDetailScreen()
+                        }
+
+                    }
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KotlinMovieAppTheme {
-        Greeting("Android")
-    }
-}
