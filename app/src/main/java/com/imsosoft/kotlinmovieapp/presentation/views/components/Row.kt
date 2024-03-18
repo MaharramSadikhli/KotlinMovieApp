@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.imsosoft.kotlinmovieapp.domain.model.Movie
 
@@ -31,7 +32,7 @@ fun MovieListRow(
     ) {
 
         Image(
-            painter = rememberImagePainter(data = movie.poster),
+            painter = rememberAsyncImagePainter(model = movie.poster),
             contentDescription = movie.title,
             modifier = Modifier
                 .padding(16.dp)
