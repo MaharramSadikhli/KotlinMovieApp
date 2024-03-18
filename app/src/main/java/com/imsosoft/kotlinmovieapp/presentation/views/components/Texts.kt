@@ -67,3 +67,12 @@ fun YearText(text: String) {
         overflow = TextOverflow.Ellipsis,
     )
 }
+
+@Composable
+fun DetailText(text: String) {
+    Text(text = text,
+        textAlign = TextAlign.Center,
+        modifier = Modifier.padding(14.dp),
+        color = Color.White
+    )
+}
