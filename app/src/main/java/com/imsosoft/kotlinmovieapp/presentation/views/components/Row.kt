@@ -50,7 +50,7 @@ fun MovieListRow(
         ) {
 
             TitleText(text = movie.title)
-            TitleText(text = movie.year)
+            YearText(text = movie.year)
 
         }
 
