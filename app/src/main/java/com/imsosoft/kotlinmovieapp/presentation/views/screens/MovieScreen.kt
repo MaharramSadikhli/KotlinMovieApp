@@ -45,8 +45,7 @@ fun MovieScreen(navController: NavController, viewModel: MoviesViewModel = hiltV
             )
 
             LazyColumn(modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 100.dp)) {
+                .fillMaxSize()) {
                 items(state.movies) { movie ->
                     MovieListRow(movie = movie) {
                         navController.navigate(Screen.MovieDetailScreen.route+"/${movie.imdbID}")
