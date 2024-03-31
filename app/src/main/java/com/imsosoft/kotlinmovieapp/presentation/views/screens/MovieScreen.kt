@@ -37,7 +37,7 @@ fun MovieScreen(navController: NavController, viewModel: MoviesViewModel = hiltV
             MovieSearchBar(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp),
+                    .padding(20.dp, top= 80.dp),
                 hint = "Joker",
                 onSearch = {
                     viewModel.onEvent(MovieEvents.Search(it))

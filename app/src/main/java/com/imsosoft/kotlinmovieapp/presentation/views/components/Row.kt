@@ -33,7 +33,7 @@ fun MovieListRow(
         .fillMaxWidth()
         .clickable { onItemClick(movie) }
         .padding(10.dp),
-        horizontalArrangement = Arrangement.SpaceBetween) {
+        horizontalArrangement = Arrangement.Start) {
 
         Image(
             painter = rememberAsyncImagePainter(model = movie.poster),
